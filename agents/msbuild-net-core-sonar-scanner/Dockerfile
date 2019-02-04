@@ -9,8 +9,8 @@ RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsof
 RUN dpkg -i packages-microsoft-prod.deb
 
 RUN add-apt-repository universe \
- && apt-get install apt-transport-https \
+ && apt-get install -y apt-transport-https \
  && apt-get update \
- && apt-get install dotnet-sdk-2.2
+ && apt-get install -y dotnet-sdk-2.2
 
 RUN dotnet tool install --global dotnet-sonarscanner -y 
