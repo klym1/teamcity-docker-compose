@@ -27,10 +27,4 @@ ENV ASPNETCORE_URLS=http://+:80 \
 
 WORKDIR /root
 
-RUN curl --insecure -o ./sonar-scanner-msbuild.zip -L https://github.com/SonarSource/sonar-scanner-msbuild/releases/download/4.5.0.1761/sonar-scanner-msbuild-4.5.0.1761-netcoreapp2.0.zip && \
-    unzip sonar-scanner-msbuild.zip -d sonar-scanner-msbuild && \
-    rm sonar-scanner-msbuild.zip
-
-ENV PATH $PATH:/root/sonar-scanner-msbuild
-
-
+RUN dotnet tool install --global dotnet-sonarscanner 
