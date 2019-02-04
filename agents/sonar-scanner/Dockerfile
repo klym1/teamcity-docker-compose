@@ -1,5 +1,8 @@
 FROM jetbrains/teamcity-minimal-agent:latest
 
+RUN apt-get update
+RUN apt-get install gnupg2
+
 # nodejs
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get -y install nodejs npm
 # gulp
