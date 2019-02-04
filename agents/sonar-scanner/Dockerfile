@@ -3,6 +3,7 @@ FROM jetbrains/teamcity-minimal-agent:latest
 RUN apt-get update && apt-get install -y \
     gnupg2 \
     wget \
+    unzip \
     locales
 
 # nodejs
