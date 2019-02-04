@@ -29,5 +29,6 @@ services:
 
   agent2:
     build: ./agents/msbuild-net-core-sonar-scanner
+    name: ".net core"
     env_file: .env
     restart: always
