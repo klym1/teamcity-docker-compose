@@ -22,7 +22,10 @@ RUN curl --insecure -o ./sonarscanner.zip -L https://binaries.sonarsource.com/Di
 ENV SONAR_RUNNER_HOME=/root/sonar-scanner
 ENV PATH $PATH:/root/sonar-scanner/bin
 
-COPY sonar-runner.properties ./sonar-scanner/conf/sonar-scanner.properties
+#COPY sonar-runner.properties ./sonar-scanner/conf/sonar-scanner.properties
+
+#   ensure Sonar uses the provided Java for musl instead of a borked glibc one
+RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /root/sonar-scanner/bin/sonar-scanner
 
 # Use bash if you want to run the environment from inside the shell, otherwise use the command that actually runs the underlying stuff
 #CMD /bin/bash
