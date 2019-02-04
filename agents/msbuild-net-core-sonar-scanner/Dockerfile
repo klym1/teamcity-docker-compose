@@ -3,6 +3,8 @@ FROM jetbrains/teamcity-minimal-agent:latest
 # Install .NET CLI dependencies
 RUN apt-get update && apt-get install -y \
      unzip \
+     libunwind8 \
+     icu-devtools \
      --no-install-recommends
 
 # Install .NET Core SDK
