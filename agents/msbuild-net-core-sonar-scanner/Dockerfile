@@ -2,16 +2,7 @@ FROM jetbrains/teamcity-minimal-agent:latest
 
 # Install .NET CLI dependencies
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        libc6 \
-        libgcc1 \
-        libgssapi-krb5-2 \
-        libicu57 \
-        liblttng-ust0 \
-        libssl1.0.2 \
-        libstdc++6 \
-        zlib1g \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y --no-install-recommends
 
 # Install .NET Core SDK
 ENV DOTNET_SDK_VERSION 2.2.103
