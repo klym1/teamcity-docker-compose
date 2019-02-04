@@ -3,6 +3,7 @@ FROM jetbrains/teamcity-minimal-agent:latest
 RUN apt-get update && apt-get install -y \
     gnupg2 \
     wget \
+    apt-utils \
     unzip \
     locales
 
@@ -16,7 +17,7 @@ WORKDIR /root
 RUN curl --insecure -o ./sonarscanner.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip && \
     unzip sonarscanner.zip && \
     rm sonarscanner.zip && \
-    mv sonar-scanner-3.2.0.1227-linux sonar-scanner
+    mv sonar-scanner-cli-3.3.0.1492-linux sonar-scanner
 
 ENV SONAR_RUNNER_HOME=/root/sonar-scanner
 ENV PATH $PATH:/root/sonar-scanner/bin
