@@ -29,4 +29,4 @@ RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /root/sonar-scanne
 
 # Use bash if you want to run the environment from inside the shell, otherwise use the command that actually runs the underlying stuff
 #CMD /bin/bash
-CMD sonar-scanner -Dsonar.projectBaseDir=./src
+#CMD sonar-scanner -Dsonar.projectBaseDir=./src
