@@ -13,4 +13,4 @@ RUN add-apt-repository universe \
  && apt-get update \
  && apt-get install -y dotnet-sdk-2.2
 
-RUN dotnet tool install --global dotnet-sonarscanner -y 
+RUN dotnet tool install --global dotnet-sonarscanner
