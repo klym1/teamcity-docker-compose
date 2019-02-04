@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     locales
 
 # nodejs
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get -y install nodejs npm
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get -y install nodejs
 # gulp
 RUN npm install -g gulp-cli
 
