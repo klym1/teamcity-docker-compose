@@ -31,3 +31,4 @@ services:
     build: ./agents/msbuild-net-core-sonar-scanner
     env_file: .env
     restart: always
+    command: --name="net-core-agent"

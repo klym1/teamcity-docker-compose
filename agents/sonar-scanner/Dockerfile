@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     apt-utils \
     unzip \
+    git \
     locales
 
 # nodejs
