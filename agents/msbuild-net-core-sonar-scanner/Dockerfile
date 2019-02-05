@@ -19,4 +19,4 @@ RUN dotnet tool install --global coverlet.console
 
 ENV PATH="${PATH}:/root/.dotnet/tools"
 
-export ASPNETCORE_ENVIRONMENT="STAGING"
+RUN export ASPNETCORE_ENVIRONMENT="STAGING"
