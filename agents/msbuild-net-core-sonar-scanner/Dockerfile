@@ -15,5 +15,6 @@ RUN add-apt-repository universe \
  && apt-get install -y dotnet-sdk-2.2
 
 RUN dotnet tool install --global dotnet-sonarscanner
+RUN dotnet tool install --global coverlet.console
 
 ENV PATH="${PATH}:/root/.dotnet/tools"
