@@ -2,6 +2,7 @@ FROM jetbrains/teamcity-minimal-agent:latest
 
 RUN apt-get update && apt-get install -y \
     wget \
+    git \
     software-properties-common
     
 RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
