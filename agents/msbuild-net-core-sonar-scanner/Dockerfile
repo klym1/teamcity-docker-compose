@@ -24,3 +24,4 @@ RUN dotnet tool install --global dotnet-sonarscanner
 RUN dotnet tool install --global coverlet.console
 
 ENV PATH="${PATH}:/root/.dotnet/tools"
+ENV ASPNETCODE_ENVIRONMENT=STAGING
