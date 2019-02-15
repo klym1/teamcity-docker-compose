@@ -10,6 +10,17 @@ services:
     env_file: .env
     restart: always
 
+  mysql:
+     image: mysql:5.7
+     container_name: mysql57
+     ports:
+      - 3306:3306
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: "root"
+     volumes:
+      - ./scripts/docker/mysql/:/docker-entrypoint-initdb.d/
+
   server:
     image: jetbrains/teamcity-server:latest
     volumes:
@@ -30,4 +41,6 @@ services:
   agent2:
     build: ./agents/msbuild-net-core-sonar-scanner
     env_file: .env
+    depends_on:
+      - mysql
     restart: always
